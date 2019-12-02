@@ -7,18 +7,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
   </head>
   <body>
-    <div id="disp"></div>
+    <div id="root"></div>
     <script type="text/babel">
-      const root = document.querySelector('#disp')
-      const msg = getGreeting()
-      ReactDOM.render(msg, root)
-      function getGreeting() {
-        const r = Math.floor(Math.random() * 3)
-
-        if (r === 0)  return <p>Have a nice day</p>
-        if (r === 1)  return <p>Nice see you</p>
-        if (r === 2)  return <p>How nice day</p>
-      }
+      const value = "<<<Toute nation a le gouvernement qu'elle mérite>>>"
+      const elem = <h2>{value}</h2>
+      const root = document.getElementById('root')
+      ReactDOM.render(elem, root)
     </script>
   </body>
 </html>
