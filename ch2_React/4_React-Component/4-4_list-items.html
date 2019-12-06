@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      class RList extends React.Component {
+        render() {
+          const items = this.props.items.split(", ")
+          const itemsObj = items.map(
+            (e) => {
+              return <li>{e}</li>
+          })
+          let title = this.props.title
+
+          if(!title) title = "LIST"
+          
+          return (<div>
+            <h3>{title}</h3>
+            <ul>{itemsObj}</ul>  
+          </div>) 
+        }
+      }
+      ReactDOM.render(
+        <div>
+          <RList title="fruit" items="banana, apple, strawberry, kiwi" />
+          <RList title="vegetable" items="radish, carrot, cucumber, lettuce" />
+        </div>,
+        document.getElementById('root')
+      )
+    </script>
+  </body>
+</html>
