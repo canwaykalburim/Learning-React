@@ -19,7 +19,20 @@
             this.setState({now: (new Date())})
           }, 1000)
         }
+
+        render() {
+          const now = this.state.now
+          const hh = this.fmt(now.getHours())
+          const mm = this.fmt(now.getMinutes())
+          const ss = this.fmt(now.getSeconds())
+          return (<div>{hh}:{mm}:{ss}</div>)
+        }
+        fmt(v) {
+          const s = "00" + v
+          return s.substr(s.length - 2, 2)
+        }
       }
+      ReactDOM.render(<div><SClock /></div>, document.getElementById('root'))
     </script>
   </body>
 </html>
