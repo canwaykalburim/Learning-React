@@ -9,6 +9,7 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
+      // 컴포넌트 사용
       const dom = <div>
         <PhotoText image="pic1" label="바닷가" />
         <PhotoText image="pic2" label="모래사장" />
@@ -17,6 +18,7 @@
 
       ReactDOM.render(dom, document.getElementById('root'))
 
+      // 함수로 컴포넌트 정의
       function PhotoText(props) {
         const url = "img/" + props.image + ".jpg"
         const label = props.label

@@ -9,17 +9,20 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
+      // 리스트로 컴포넌트 정의
       class RList extends React.Component {
         render() {
+          // item 속성에 지정한 items 배열 사용
           const items = this.props.items.split(", ")
+          // 아이템 목록 기반 li 요소 생성
           const itemsObj = items.map(
             (e) => {
               return <li>{e}</li>
           })
           let title = this.props.title
-
-          if(!title) title = "LIST"
           
+          if(!title) title = "LIST"
+          // 렌더링할 내용 반환
           return (<div>
             <h3>{title}</h3>
             <ul>{itemsObj}</ul>  

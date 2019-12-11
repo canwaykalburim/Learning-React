@@ -11,23 +11,25 @@
         line-height: 650px;
         cursor: pointer;
       }
-      #root:hover {
-        color: rgb(255, 0, 0);
-      }
     </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="text/babel">
       class Hello extends React.Component {
+        constructor(props) {
+          super(props)
+          this.clickHandler = this.clickHandler.bind(this)
+        }
+        clickHandler(e) {
+          const name = this.props.name
+          window.alert(`Hello, ${name}`)
+        }
         render() {
-          const clickHandler = (e) => {
-            window.alert('Hello')
-          }
-          return (<div onClick={clickHandler}>Click</div>)
+          return (<div onClick={this.clickHandler}>Click</div>)
         }
       }
-      ReactDOM.render(<Hello />, document.getElementById('root'))
+      ReactDOM.render(<Hello name="Seodongyoung" />, document.getElementById('root'))
     </script>
   </body>
 </html>
