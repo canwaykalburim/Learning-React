@@ -1,19 +1,19 @@
-import React, { Component } from 'React'
+import React, { Component } from 'react'
 import './Stopwatch.css'
 
-// Stopwatch 컴포넌트 정의
+// 컴포넌트 정의
 class Stopwatch extends Component {
   constructor(props) {
     super(props)
-    // 초기값 설정
-    this.state = {
-      isLive: false,
-      curTime: 0,
-      startTime: 0
+      // 초깃값 설정
+      this.state = {
+        isLive: false,
+        curTime: 0,
+        startTime: 0
     }
     this.timerId = 0
   }
-  //마운트 했을 떄
+  // 마운트 했을 때
   componentWillMount() {
     this.timerId = setInterval(e => {
       this.tick()
@@ -30,7 +30,7 @@ class Stopwatch extends Component {
       this.setState({curTime: v})
     }
   }
-  // 시작 중지 버튼을 클릭 했을 때
+  // 시작/중지 버튼 클릭 했을 때
   clickHandler(e) {
     // 중지할 때
     if(this.state.isLive) {
@@ -40,10 +40,9 @@ class Stopwatch extends Component {
     // 시작할 때
     const v = new Date().getTime()
     this.setState({
-      curTime: v,
+      curTIme: v,
       startTime: v,
-      isLive: true
-    })
+      isLive: true})
   };
   // 출력할 시계 생성
   getDisp() {
@@ -58,11 +57,13 @@ class Stopwatch extends Component {
       const s = '00' + String(num)
       return s.substr(s.length - 2, 2)
     }
-  return <span className='disp'>{z(hh)}:{z(mm)}:{z(ss)}</span>
+    return <span className='disp'>
+      {z(hh)}:{z(mm)}:{z(ss)}
+    </span>
   }
   // 화면 렌더링
   render() {
-    let label = 'START'
+    let label  ='START'
     if(this.state.isLive) {
       label = 'STOP'
     }

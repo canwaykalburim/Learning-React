@@ -1,0 +1,18 @@
+div.App {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+Form {
+  margin-top: 30%;
+}
+
+input[type="submit"] {
+  height: 30px;
+  margin-left: 5px;
+}
+
+input[type="text"] {
+  height: 20px;
+}
