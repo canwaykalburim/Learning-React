@@ -7,8 +7,7 @@ export default class InchToCm extends Component {
     super(props)
     // ValueInput에 출력할 값을 상태로 저장
     this.state = {
-      inch : 0,
-      cm : 0
+      inch : 0, cm : 0
     }
   }
   // inch가 변경됐을 때
