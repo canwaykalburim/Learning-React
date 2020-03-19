@@ -12,7 +12,7 @@ class App extends Component {
     }
   }
   // 마운트 됐을 때
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // JSON 데이터 읽어 들이기
     request.get('./fruits.json')
       .accept('application/json')
