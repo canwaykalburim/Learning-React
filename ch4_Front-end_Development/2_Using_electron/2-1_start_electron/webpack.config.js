@@ -2,11 +2,26 @@ const path = require('path')
 const webpack = require('webpack')
 
 // 변환 대상에서 제외할 모듈
-const externalPlugins = new webpack.ExternalPlugin('commonjs', [
-  'app', 'auto-updater', 'browser-window', 'content-tracing', 'dialog',
-  'electron', 'global-shortcut', 'ipc', 'menu', 'menu-item', 'power-monitor',
-  'protocol', 'tray', 'remote', 'web-frame', 'clipboard', 'crash-reporter',
-  'screen', 'shell'
+const externalPlugins = new webpack.ExternalsPlugin('commonjs', [
+  'app',
+  'auto-updater', 
+  'browser-window', 
+  'content-tracing', 
+  'dialog',
+  'electron', 
+  'global-shortcut', 
+  'ipc', 
+  'menu', 
+  'menu-item', 
+  'power-monitor',
+  'protocol', 
+  'tray', 
+  'remote', 
+  'web-frame', 
+  'clipboard', 
+  'crash-reporter',
+  'screen', 
+  'shell'
 ])
 
 module.exports = {
