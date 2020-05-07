@@ -9,8 +9,8 @@ const savefile = path.join(__dirname, 'cli-app.json')
 
 // 웹 API 호출
 Mastodon.createOAuthApp(instanceUri+'/api/v1/apps', clientName)
-  .catch(err => console.error(err))
-  .then(res => {
-    console.log(res)
-    fs.writeFileSync(savefile, JSON.stringify(res))
-  })
+.catch(err => console.error(err))
+.then(res => {
+  console.log(res)
+  fs.writeFileSync(savefile, JSON.stringify(res))
+})

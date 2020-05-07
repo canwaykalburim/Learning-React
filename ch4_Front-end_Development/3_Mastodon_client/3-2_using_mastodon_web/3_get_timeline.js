@@ -15,7 +15,7 @@ const M = new Mastodon({
 
 // 타임라인을 읽어 들임
 M.get('timelines/home', {})
-  .then(res => {
-    const data = res.data
-    console.log(data)
-  })
+.then(res => {
+  const data = res.data
+  console.log(data)
+})

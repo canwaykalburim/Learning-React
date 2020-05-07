@@ -11,22 +11,22 @@ const info = JSON.parse(fs.readFileSync(file_cli_app))
 
 // 인증 전용 URL 추출
 Mastodon.getAuthorizationUrl(
+  info.client_id,
+  info.client_secret,
+  instanceUri)
+.then(url => {
+  console.log("다음 URL에 접근해서 출력되는 코드를 입력해주세요.")
+  console.log(url)
+  // 명령줄에 코드 출력
+  const code = readlineSync.question('Code: ')
+  // 접근 토큰 추출
+  return Mastodon.getAccessToken(
     info.client_id,
     info.client_secret,
+    code,
     instanceUri)
-  .then(url => {
-    console.log("다음 URL에 접근해서 출력되는 코드를 입력해주세요.")
-    console.log(url)
-    // 명령줄에 코드 출력
-    const code = readlineSync.question('Code: ')
-    // 접근 토큰 추출
-    return Mastodon.getAccessToken(
-      info.client_id,
-      info.client_secret,
-      code,
-      instanceUri)
-  })
-  .then(token => {
-    console.log('Access Token: ', token)
-    fs.writeFileSync(file_user, token)
-  })
+})
+.then(token => {
+  console.log('Access Token: ', token)
+  fs.writeFileSync(file_user, token)
+})
