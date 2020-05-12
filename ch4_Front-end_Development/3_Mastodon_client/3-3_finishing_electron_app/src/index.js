@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import fs from 'fs'
 import path from 'path'
 import Mastodon from 'mastodon-api'
-import {style} from './styles.js'
+import {styles} from './styles.js'
 
 // 컴포넌트 정의
 export default class App extends Component {
@@ -51,7 +51,7 @@ export default class App extends Component {
   }
   // 텍스트 박스가 변경됐을 때의 처리
   handleText(e) {
-    this.setState({timelines: res.data})
+    this.setState({tootdata: e.target.value})
   }
   // 전송 처리
   toot(e) {
@@ -70,7 +70,7 @@ export default class App extends Component {
   // 렌더링
   render() {
     return(<div>
-      <div style={StyleSheet.editorPad}>
+      <div style={StyleS.editorPad}>
         <h1 style={styles.title}>마스토돈 클라이언트</h1>
         <textarea style={styles.editor} value={this.state.tootdata}
         onChange={e => this.handleText(e)} />
@@ -97,7 +97,7 @@ export default class App extends Component {
       // Toot 렌더링 내용
       return(<div key={e.id} style={styles.content}>
         <img style={styles.avatar}
-        src={e.account.avatar} />
+          src={e.account.avatar} />
         <div style={styles.ctext}>
           {memo}{e.account.display_name}
           <span dangerouslySetInnerHTML={{
