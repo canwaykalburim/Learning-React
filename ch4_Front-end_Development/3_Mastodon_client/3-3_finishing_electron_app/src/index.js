@@ -9,7 +9,7 @@ import {styles} from './styles.js'
 export default class App extends Component {
   constructor(props) {
     super(props)
-    this.apiUri = 'https://pawoo.net/api/v1'
+    this.apiUri = 'https://pawoo.net/api/v1/'
     this.loadInfo()
     this.state = {
       tootdata: '',
