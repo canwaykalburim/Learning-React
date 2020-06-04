@@ -1,5 +1,5 @@
 {
-  "name": "mstdn_cli",
+  "name": "mstdn_cli2",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -11,7 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mas": "0.0.3",
     "mastodon-api": "^1.3.0",
     "readline-sync": "^1.4.10"
   },
@@ -20,6 +19,7 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "browserify": "^16.5.1",
     "electron": "^9.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

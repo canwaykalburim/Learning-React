@@ -14,7 +14,13 @@ app.on('activate', () => {
 
 // 화면 생성
 function createWindow() {
-  mainWindow = new BrowserWindow({width: 600, height: 800})
+  mainWindow = new BrowserWindow({
+    webPreferences: {
+      nodeIntegration: true
+    },
+    width: 600,
+    height: 800,
+  })
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
