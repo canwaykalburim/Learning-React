@@ -16,9 +16,7 @@ export default class App extends Component {
     return str.toUpperCase()
   }
   tick() {
-    if(!this.state.isActive) {
-      return
-    }
+    if(!this.state.isActive)  return
     const clip = clipboard.readText()
     let clip2 = clip
     if(this.state.low2up) {
@@ -47,7 +45,7 @@ export default class App extends Component {
               <ul className='list-group'>
                 <li className='list-group-item'>
                   <label>
-                    <input tpye='checkbox' checked={this.state.isActive} name='isActive' 
+                    <input type='checkbox' checked={this.state.isActive} name='isActive' 
                       onChange={e => this.changeState(e)} />감시 활성화
                   </label>
                 </li>

@@ -16,7 +16,13 @@ app.on('activate', function() {
 
 // 화면을 생성하고 콘텐츠를 읽어 들임
 function createWindow() {
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+    mainWindow = new BrowserWindow({
+    webPreferences: {
+      nodeIntegration: true
+    },
+      width: 600,
+      height: 800,
+    })
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
