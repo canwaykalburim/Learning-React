@@ -4,11 +4,12 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 const HelloApp2 = () => (
   <Router>
     <div style={{margin: 20}}>
-      <helloHeader />
+      <HelloHeader />
       <Route exact path='/' component={HelloKorean} />
       <Route path='/ko' component={HelloKorean} />
       <Route path='/ja' component={HelloJapanese} />
       <Route path='/en' component={HelloEnglish} />
+      <HelloFooter />
     </div>
   </Router>
 )
