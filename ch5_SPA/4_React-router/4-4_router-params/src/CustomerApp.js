@@ -44,7 +44,7 @@ class UserCard extends React.Component {
     return (
       <div>
         <div>{id}: {user.name} - {user.info}</div>
-        <div><Link to='/' />→ 뒤로가기</div>
+        <div><Link to='/' >→ 뒤로가기</Link></div>
       </div>
     )
   }
