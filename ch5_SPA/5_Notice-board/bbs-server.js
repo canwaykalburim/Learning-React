@@ -13,11 +13,11 @@ const app = express()
 const portNo = 3001
 
 app.listen(portNo, () => {
-  console.log('서버 실행 완료:', 'http://localhost:${portNo}')
+  console.log('서버 실행 완료:', `http://localhost:${portNo}`)
 })
 
-// Public 디렉토리 내용 자동 응답
-app.use('public', express.static('./public'))
+// public 디렉토리 내용 자동 응답
+app.use('/public', express.static('./public'))
 
 // 최상위 페이지에 접속시 /public으로 리다이렉트
 app.get('/', (req, res) => {
@@ -45,7 +45,7 @@ app.get('/api/write', (req, res) => {
   db.insert({
     name: q.name,
     body: q.body,
-    stime: (new DataCue()).getTime()
+    stime: (new Date()).getTime()
   }, (err, doc) => {
     if(err) {
       console.error(err)
